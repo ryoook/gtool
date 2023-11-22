@@ -1,0 +1,11 @@
+releases/
+.vscode/
+i.push.gapi.realsee.com
+realsee-push-gapi
+coverage.out
+*_coverage.out
+
+# IDE
+.idea
+
+config/pack_info.txt
