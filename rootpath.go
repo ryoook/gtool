@@ -5,10 +5,12 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"sync/atomic"
 )
 
 var (
 	selfPath = ""
+	rootPath atomic.Value
 )
 
 func init() {
@@ -22,6 +24,9 @@ func init() {
 }
 
 func RootPath() []string {
+	if rootPath.Load() != nil {
+		return rootPath.Load().([]string)
+	}
 	var res []string
 	// Working dir
 	path, err := os.Getwd()
@@ -39,5 +44,6 @@ func RootPath() []string {
 	if binPath != "" {
 		res = append(res, binPath)
 	}
+	rootPath.Store(res)
 	return res
 }
