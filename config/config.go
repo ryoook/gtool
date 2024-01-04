@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"github.com/mitchellh/mapstructure"
+	"github.com/ryoook/gtool/env"
 	"github.com/ryoook/gtool/rootpath"
 	"gopkg.in/yaml.v3"
 	"os"
@@ -10,8 +11,8 @@ import (
 	"sync"
 )
 
-// GetYourConfig Read your custom config into your structure
-func GetYourConfig(path string, retConfig interface{}) error {
+// Get Read your custom config into your structure
+func Get(path string, retConfig interface{}) error {
 	rawConfig, err := get(path)
 	if err != nil {
 		return err
@@ -91,8 +92,8 @@ func parseYamlContent(content []byte) (interface{}, error) {
 		return nil, err
 	}
 
-	if c, exist := config[GetEnv()]; exist {
+	if c, exist := config[env.GetEnv()]; exist {
 		return c, nil
 	}
-	return nil, fmt.Errorf("env: %s is not configed", GetEnv())
+	return nil, fmt.Errorf("env: %s is not configed", env.GetEnv())
 }

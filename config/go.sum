@@ -1,0 +1,14 @@
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
+github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
+github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
+github.com/ryoook/gtool/env v0.0.0-20240104100848-1e64dc91c8f7 h1:3Dr3bnHKwVpdopFT09Q3QiFSAG/TUH2gJSdMWsE1y2o=
+github.com/ryoook/gtool/env v0.0.0-20240104100848-1e64dc91c8f7/go.mod h1:R/S57pky5DZpUm/rOzMqAOP/EXWWgru6P9DoQLUwRsg=
+github.com/ryoook/gtool/rootpath v0.0.0-20240104043544-341fbbee040e h1:zriNONzOvChSwgihWnsYWo9iay0V4SbWH87U4uq2MCA=
+github.com/ryoook/gtool/rootpath v0.0.0-20240104043544-341fbbee040e/go.mod h1:0e3ZZN+J+czNzJY/h40FSciGJVxoxwxhRh9axYMEjRo=
+github.com/ryoook/gtool/tool v0.0.0-20240104043016-302e52500ce3 h1:rT5muyTSHV40JjWR3U2c3RhDfa0MCln5ZSVqeMNOtDE=
+github.com/ryoook/gtool/tool v0.0.0-20240104043016-302e52500ce3/go.mod h1:+d/mdn0KeZd6qII/LCqZYRrQSBhgUOla5ef7qOGa6xA=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
+gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
