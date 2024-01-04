@@ -1,13 +1,13 @@
 package rootpath
 
 import (
+	"github.com/ryoook/gtool/tool"
 	"os"
 	"path/filepath"
 	"regexp"
 	"runtime"
 	"strings"
 	"sync/atomic"
-	"tool"
 )
 
 var (
