@@ -15,7 +15,7 @@ var (
 	mainPkgRegex atomic.Value
 )
 
-func MainPkgPath() string {
+func getMainPkgPath() string {
 	if mainPkgDir.Load() != nil {
 		return mainPkgDir.Load().(string)
 	}

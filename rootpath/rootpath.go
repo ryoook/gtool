@@ -1,7 +1,6 @@
-package gtool
+package rootpath
 
 import (
-	"github.com/ryoook/gtool/gfile"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -34,7 +33,7 @@ func RootPath() []string {
 		res = append(res, path)
 	}
 	// Main package dir
-	mainPkgPath := gfile.MainPkgPath()
+	mainPkgPath := getMainPkgPath()
 	if mainPkgPath != "" {
 		res = append(res, mainPkgPath)
 	}
