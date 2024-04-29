@@ -12,8 +12,8 @@ import (
 )
 
 // Get Read your custom config into your structure
-func Get(path string, retConfig interface{}) error {
-	rawConfig, err := get(path)
+func Get(path string, retConfig interface{}, cache ...bool) error {
+	rawConfig, err := get(path, cache...)
 	if err != nil {
 		return err
 	}
@@ -25,26 +25,31 @@ var (
 	container *sync.Map
 )
 
-func init() {
-	container = &sync.Map{}
-}
-
-func get(path string) (interface{}, error) {
+func get(path string, cache ...bool) (interface{}, error) {
 	var (
 		value interface{}
 		err   error
 		ok    bool
 	)
-	value, ok = container.Load(path)
-	if !ok {
-		// init
-		value, err = loadYaml(path)
-		if err != nil {
-			return nil, err
-		}
+	if len(cache) > 0 && cache[0] && container == nil {
+		(&sync.Once{}).Do(func() {
+			container = &sync.Map{}
+		})
 	}
-	container.Store(path, value)
-	return value, err
+	if len(cache) > 0 && cache[0] {
+		value, ok = container.Load(path)
+		if !ok {
+			// init
+			value, err = loadYaml(path)
+			if err != nil {
+				return nil, err
+			}
+		}
+		container.Store(path, value)
+		return value, err
+	} else {
+		return loadYaml(path)
+	}
 }
 
 func loadYaml(path string) (interface{}, error) {
